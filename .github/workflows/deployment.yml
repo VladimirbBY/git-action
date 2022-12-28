@@ -1,5 +1,5 @@
 name: Deployment
-on: push
+on: [push, ]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -11,7 +11,6 @@ jobs:
         with:
           path: ~/.npm
           key: node-module-${{ hashFile('**/package-lock.json') }}
-
       - name: Install dependecies
         run: npm ci
       - name: Test app

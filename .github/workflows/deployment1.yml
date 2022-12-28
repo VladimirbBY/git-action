@@ -1,0 +1,21 @@
+name: Deployment
+on: 
+  push:
+    branches:
+      - 'master'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository Code
+        uses: actions/checkout@v3
+      - name: Install dependecies
+        run: npm ci
+      - name: Test app
+        run: npm run test
+      - name: Lint application
+        run: npm run lint
+      - name: Lint application
+        run: npm run build
+      - name: Deploy
+        run: echo My_Deploying

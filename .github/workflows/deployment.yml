@@ -10,7 +10,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: node-module-${{ hashFile('**/package-lock.json') }}
+          key: node-module-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependecies
         run: npm ci
       - name: Test app
@@ -25,7 +25,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: node-module-${{ hashFile('**/package-lock.json') }}       
+          key: node-module-${{ hashFiles('**/package-lock.json') }}       
       - name: Install dependecies
         run: npm ci
       - name: Lint application
@@ -40,7 +40,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: node-module-${{ hashFile('**/package-lock.json') }}       
+          key: node-module-${{ hashFiles('**/package-lock.json') }}       
       - name: Install dependecies
         run: npm ci
       - name: Lint application
